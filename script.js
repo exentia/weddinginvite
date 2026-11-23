@@ -19,7 +19,7 @@ const weddingConfig = {
     date: "2026-12-18",
     startTime: "19:00",
     endTime: "21:00",
-    venue: "Wedding Venue",
+    venue: "Seasons 24",
     address: "Landmark 24, Wagholi, Pune, SH Nagar, Road, Wagholi, Pune, Maharashtra 412207",
     mapsUrl: "https://maps.app.goo.gl/E2gMSjTNXPto4pGb6",
     description: "With the blessings of Allah SWT and our beloved families, we invite you to witness our Nikah."
