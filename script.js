@@ -46,7 +46,7 @@ const weddingConfig = {
       date: "2026-12-17",
       startTime: "19:00",
       endTime: "23:00",
-      venue: "Haldi Venue",
+      venue: "Family Residence",
       address: "Haa Meem Residency",
       mapsUrl: "https://maps.google.com/?q=Haa+Meem",
       description: "A joyful turmeric ceremony blessing the couple with warmth and good fortune ahead of their big day.",
