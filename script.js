@@ -10,6 +10,22 @@ const weddingConfig = {
   brideParents: "Mr. & Mrs. Rahman",
   groomParents: "Mr. & Mrs. Khan",
 
+  // The Nikah is the main ceremony: it drives the countdown, the Save-the-Date
+  // scroll, the closing date, and its own dedicated spotlight section — it is
+  // intentionally not one of the swipeable cards in `events` below.
+  nikah: {
+    id: "nikah",
+    title: "Nikah",
+    date: "2027-01-01",
+    startTime: "19:00",
+    endTime: "21:00",
+    venue: "Wedding Venue",
+    address: "Full Address, City, State",
+    mapsUrl: "https://maps.google.com/?q=Wedding+Venue",
+    description: "With the blessings of Allah SWT and our beloved families, we invite you to witness our Nikah."
+  },
+
+  // Swipeable pre-wedding festivities carousel.
   events: [
     {
       id: "mehndi",
@@ -22,50 +38,27 @@ const weddingConfig = {
       mapsUrl: "https://maps.google.com/?q=Family+Residence",
       description: "An evening of henna, music, and joyful beginnings with family and friends.",
       theme: "mehndi",
-      dressCode: { label: "Vibrant Festive Colours", color: "#D9A441" }
+      dressCode: { label: "Vibrant Festive Colours", color: "#496934" }
     },
     {
-      id: "nikah",
-      title: "Nikah",
-      date: "2027-01-01",
-      startTime: "19:00",
-      endTime: "21:00",
-      venue: "Wedding Venue",
+      id: "haldi",
+      title: "Haldi",
+      date: "2026-12-31",
+      startTime: "11:00",
+      endTime: "14:00",
+      venue: "Haldi Venue",
       address: "Full Address, City, State",
       mapsUrl: "https://maps.google.com/?q=Wedding+Venue",
-      description: "With the blessings of Allah SWT and our beloved families, we invite you to witness our Nikah.",
-      theme: "nikah",
-      dressCode: { label: "Ivory & Gold", color: "#E4D2A4" }
-    },
-    {
-      id: "walima",
-      title: "Walima",
-      date: "2027-01-02",
-      startTime: "20:00",
-      endTime: "23:00",
-      venue: "Banquet Hall",
-      address: "Full Address, City, State",
-      mapsUrl: "https://maps.google.com/?q=Banquet+Hall",
-      description: "Join us for a celebratory feast as we begin our married life together.",
-      theme: "walima",
-      dressCode: { label: "Emerald & Black-Tie", color: "#1E4F3D" }
+      description: "A joyful turmeric ceremony blessing the couple with warmth and good fortune ahead of their big day.",
+      theme: "haldi",
+      dressCode: { label: "Sunshine Yellow & Marigold", color: "#D9A441" }
     }
-  ],
-
-  galleryImages: [
-    { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=900&auto=format&fit=crop", alt: "Engagement portrait", caption: "Where it all began" },
-    { src: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=900&auto=format&fit=crop", alt: "Wedding rings", caption: "Promises we'll keep" },
-    { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=900&auto=format&fit=crop", alt: "Floral decor", caption: "Little details, big love" },
-    { src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=900&auto=format&fit=crop", alt: "Couple silhouette", caption: "Just the two of us" },
-    { src: "https://images.unsplash.com/photo-1557151331-5d93debb2e9f?q=80&w=900&auto=format&fit=crop", alt: "Henna detail", caption: "Mehndi memories" },
-    { src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=900&auto=format&fit=crop", alt: "Venue arch", caption: "Where we'll say I do" }
   ],
 
   backgroundMusic: "" // e.g. "assets/nasheed.mp3" — music control stays hidden while empty
 };
 
-const nikahEvent = weddingConfig.events.find((e) => e.id === "nikah") || weddingConfig.events[0];
-const walimaEvent = weddingConfig.events.find((e) => e.id === "walima") || weddingConfig.events[weddingConfig.events.length - 1];
+const nikahEvent = weddingConfig.nikah;
 
 function lastWord(str) {
   const parts = str.trim().split(/\s+/);
@@ -90,7 +83,7 @@ function applyTheme(mode) {
 }
 
 function initTheme() {
-  const stored = localStorage.getItem(THEME_KEY) || "light";
+  const stored = localStorage.getItem(THEME_KEY) || "dark";
   applyTheme(stored);
 
   document.getElementById("themeToggle").addEventListener("click", () => {
@@ -144,26 +137,14 @@ function fadeInMusic() {
 }
 
 /* ==========================================================================
-   Loader — waits for fonts, gallery images, and music (with a safety cap)
+   Loader — waits for fonts and music (with a safety cap)
    ========================================================================== */
-
-function preloadImage(src) {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.onload = resolve;
-    img.onerror = resolve;
-    img.src = src;
-  });
-}
 
 function initLoader() {
   const loader = document.getElementById("loader");
   const audio = document.getElementById("bgMusic");
 
-  const tasks = [
-    document.fonts ? document.fonts.ready : Promise.resolve(),
-    ...weddingConfig.galleryImages.map((img) => preloadImage(img.src))
-  ];
+  const tasks = [document.fonts ? document.fonts.ready : Promise.resolve()];
 
   if (weddingConfig.backgroundMusic) {
     tasks.push(
@@ -240,6 +221,11 @@ function initBook() {
   const book = document.getElementById("book");
   const hint = document.getElementById("bookHint");
   const invitationBody = document.getElementById("invitationBody");
+  const chapterEl = document.getElementById("bookChapterText");
+  const bookStage = document.getElementById("book-stage");
+
+  splitLetters(chapterEl, "A new chapter begins…");
+  const chapterLetters = chapterEl.querySelectorAll(".letter");
 
   function openBook() {
     if (book.classList.contains("is-open")) return;
@@ -247,14 +233,31 @@ function initBook() {
     hint.classList.add("is-hidden");
     fadeInMusic();
 
-    // let the cover finish swinging open before "zooming" into the first page
+    // let the cover finish swinging open, then type out the chapter line on the page beneath it
+    const typeStartDelay = 700;
+    const typeDuration = chapterLetters.length * 45 + 500;
+    const readPause = 900;
+
+    setTimeout(() => {
+      chapterLetters.forEach((letter) => letter.classList.add("is-in"));
+    }, typeStartDelay);
+
+    // once it's been read, reveal the rest of the invitation and scroll to it
+    const scrollSettleTime = 700; // roughly how long the smooth scroll takes to finish
     setTimeout(() => {
       invitationBody.hidden = false;
       requestAnimationFrame(() => {
         invitationBody.classList.add("is-open");
         invitationBody.scrollIntoView({ behavior: "smooth", block: "start" });
       });
-    }, 900);
+
+      // the book stage is a one-time intro — drop it from the page once we've scrolled away,
+      // then snap straight back to re-align the viewport (removing its height shifts the scroll)
+      setTimeout(() => {
+        bookStage.style.display = "none";
+        invitationBody.scrollIntoView({ block: "start" });
+      }, scrollSettleTime);
+    }, typeStartDelay + typeDuration + readPause);
   }
 
   book.addEventListener("click", openBook);
@@ -413,7 +416,7 @@ function initSaveDate() {
   scrollTassel.addEventListener("pointerup", endDrag);
   scrollTassel.addEventListener("pointercancel", endDrag);
 
-  document.getElementById("addToCalendarDate").addEventListener("click", () => downloadICS(nikahEvent));
+  document.getElementById("addToCalendarDate").addEventListener("click", () => openGoogleCalendar(nikahEvent));
 }
 
 /* ==========================================================================
@@ -531,7 +534,7 @@ function createCarousel3D(track, dotsWrap, items, renderSlide) {
   return { goTo };
 }
 
-const eventIconRef = { mehndi: "#icon-henna", nikah: "#icon-mosque", walima: "#icon-lantern" };
+const eventIconRef = { mehndi: "#icon-henna", haldi: "#icon-rose" };
 
 function buildEventSlide(evt) {
   const el = document.createElement("div");
@@ -550,35 +553,23 @@ function buildEventSlide(evt) {
   return el;
 }
 
-function buildStorySlide(img) {
-  const el = document.createElement("div");
-  el.className = "story-card";
-  el.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="lazy"><p class="story-caption">${img.caption}</p>`;
-  return el;
-}
-
 function initFestivities() {
   const track = document.getElementById("festivitiesTrack");
   const dots = document.getElementById("festivitiesDots");
   createCarousel3D(track, dots, weddingConfig.events, buildEventSlide);
 }
 
-function initStory() {
-  const track = document.getElementById("storyTrack");
-  const dots = document.getElementById("storyDots");
-  createCarousel3D(track, dots, weddingConfig.galleryImages, buildStorySlide);
-}
-
 /* ==========================================================================
-   7. Grand Reception — Walima spotlight
+   7. Nikah spotlight (the section markup/CSS still uses "reception" names —
+      it's the same deep-emerald showcase card, just repurposed for Nikah)
    ========================================================================== */
 
 function initReception() {
-  document.getElementById("receptionTitle").textContent = walimaEvent.title;
+  document.getElementById("receptionTitle").textContent = nikahEvent.title;
   document.getElementById("receptionDate").textContent =
-    `${formatLongDate(walimaEvent.date)} · ${formatTime12h(walimaEvent.startTime)}`;
-  document.getElementById("receptionVenue").textContent = `${walimaEvent.venue}, ${walimaEvent.address}`;
-  document.getElementById("receptionAddToCalendar").addEventListener("click", () => downloadICS(walimaEvent));
+    `${formatLongDate(nikahEvent.date)} · ${formatTime12h(nikahEvent.startTime)}`;
+  document.getElementById("receptionVenue").textContent = `${nikahEvent.venue}, ${nikahEvent.address}`;
+  document.getElementById("receptionAddToCalendar").addEventListener("click", () => openGoogleCalendar(nikahEvent));
 
   const blooms = document.querySelectorAll("[data-bloom]");
   const observer = new IntersectionObserver(
@@ -669,12 +660,13 @@ function initLocation() {
 }
 
 /* ==========================================================================
-   Calendar — .ics download, shared by every "Add to Calendar" button
+   Calendar — opens Google Calendar's event-creation page, pre-filled,
+   shared by every "Add to Calendar" button
    ========================================================================== */
 
 function pad(n) { return String(n).padStart(2, "0"); }
 
-function toICSDate(date) {
+function toGCalDate(date) {
   return (
     date.getUTCFullYear().toString() +
     pad(date.getUTCMonth() + 1) +
@@ -685,39 +677,23 @@ function toICSDate(date) {
   );
 }
 
-function buildICS(event) {
+function buildGoogleCalendarUrl(event) {
   const start = new Date(`${event.date}T${event.startTime}:00`);
   const end = new Date(`${event.date}T${event.endTime}:00`);
 
-  const lines = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//Afreen & Aftab Wedding//EN",
-    "BEGIN:VEVENT",
-    `UID:${Date.now()}-${event.id}@afreenwedding`,
-    `DTSTAMP:${toICSDate(new Date())}`,
-    `DTSTART:${toICSDate(start)}`,
-    `DTEND:${toICSDate(end)}`,
-    `SUMMARY:${event.title} — ${weddingConfig.brideName} & ${weddingConfig.groomName}`,
-    `LOCATION:${event.address}`,
-    `DESCRIPTION:${event.description}`,
-    "END:VEVENT",
-    "END:VCALENDAR"
-  ];
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: `${event.title} — ${weddingConfig.brideName} & ${weddingConfig.groomName}`,
+    dates: `${toGCalDate(start)}/${toGCalDate(end)}`,
+    details: event.description,
+    location: event.address
+  });
 
-  return lines.join("\r\n");
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
 
-function downloadICS(event) {
-  const blob = new Blob([buildICS(event)], { type: "text/calendar" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `${event.title}-${weddingConfig.brideName}-${weddingConfig.groomName}.ics`;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
+function openGoogleCalendar(event) {
+  window.open(buildGoogleCalendarUrl(event), "_blank", "noopener");
 }
 
 /* ==========================================================================
@@ -755,7 +731,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initSaveDate();
   initCountdown();
   initFestivities();
-  initStory();
   initReception();
   initLocation();
   initScrollReveal();

@@ -85,7 +85,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   margin: 0;
@@ -188,8 +188,8 @@ a { color: inherit; }
 
 .chrome-controls {
   position: fixed;
-  top: clamp(0.9rem, 3vw, 1.5rem);
-  right: clamp(0.9rem, 3vw, 1.5rem);
+  top: calc(env(safe-area-inset-top, 0px) + clamp(0.9rem, 3vw, 1.5rem));
+  right: calc(env(safe-area-inset-right, 0px) + clamp(0.9rem, 3vw, 1.5rem));
   z-index: 60;
   display: flex;
   gap: 0.6rem;
@@ -376,18 +376,19 @@ a { color: inherit; }
    ========================================================================== */
 
 .book-stage {
-  min-height: 100svh;
   min-height: 100vh;
+  min-height: 100svh;
   justify-content: center;
   background: radial-gradient(120% 90% at 50% 100%, var(--color-bg-alt), var(--color-bg) 70%);
   overflow: hidden;
 }
 
 .petal-field {
-  position: absolute;
+  position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .petal {
@@ -446,6 +447,23 @@ a { color: inherit; }
   background: repeating-linear-gradient(180deg, var(--ivory) 0 2px, var(--ivory-deep) 2px 4px);
   box-shadow: 0 10px 30px var(--color-shadow);
   z-index: 0;
+}
+
+.book-chapter {
+  position: absolute;
+  inset: 10px -4px 10px 2px;
+  z-index: 0;
+  margin: 0;
+  padding: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+  color: var(--emerald-900);
+  pointer-events: none;
 }
 
 .book-cover {
@@ -558,13 +576,22 @@ a { color: inherit; }
    ========================================================================== */
 
 .first-page {
-  min-height: 100svh;
   min-height: 100vh;
+  min-height: 100svh;
   justify-content: center;
   gap: 0.2rem;
   padding-top: var(--section-pad-y);
   padding-bottom: var(--section-pad-y);
 }
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(6px);
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+.letter.is-in { opacity: 1; filter: blur(0); }
+.letter.is-space { width: 0.3em; }
 
 .typed-name {
   font-family: var(--font-serif);
@@ -574,15 +601,6 @@ a { color: inherit; }
   line-height: 1.1;
   min-height: 1.2em;
 }
-
-.typed-name .letter {
-  display: inline-block;
-  opacity: 0;
-  filter: blur(6px);
-  transition: opacity 0.5s ease, filter 0.5s ease;
-}
-.typed-name .letter.is-in { opacity: 1; filter: blur(0); }
-.typed-name .letter.is-space { width: 0.3em; }
 
 .parents-line {
   font-family: var(--font-body);
@@ -821,6 +839,7 @@ a { color: inherit; }
   position: relative;
   width: 100%;
   height: clamp(380px, 56vh, 460px);
+  overflow-x: hidden;
   touch-action: pan-y;
 }
 
@@ -853,10 +872,9 @@ a { color: inherit; }
 }
 
 .event-card[data-theme="mehndi"] { --card-a: #3C6650; --card-b: #163B2E; }
-.event-card[data-theme="nikah"]  { --card-a: #F3ECDC; --card-b: #E4D2A4; color: #24312A; }
-.event-card[data-theme="walima"] { --card-a: #4A5A3C; --card-b: #1E2B18; }
-.event-card[data-theme="nikah"] .event-card-icon { color: var(--emerald-700); }
-.event-card[data-theme="nikah"] .event-card-dresscode { background: rgba(11, 43, 34, 0.08); }
+.event-card[data-theme="haldi"]  { --card-a: #F3D37A; --card-b: #D9A441; color: #3A2E0E; }
+.event-card[data-theme="haldi"] .event-card-icon { color: var(--emerald-700); }
+.event-card[data-theme="haldi"] .event-card-dresscode { background: rgba(58, 46, 14, 0.12); }
 
 .event-card-icon {
   width: 52px;
@@ -883,8 +901,11 @@ a { color: inherit; }
 
 .event-card-dresscode {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.4rem 0.5rem;
+  max-width: 100%;
   font-family: var(--font-sc);
   font-size: 0.64rem;
   letter-spacing: 0.08em;
@@ -893,38 +914,25 @@ a { color: inherit; }
   border-radius: var(--radius-pill);
   padding: 0.4rem 0.8rem;
 }
-.event-card-swatch { width: 12px; height: 12px; border-radius: 50%; background: var(--swatch-color, var(--gold)); border: 1px solid rgba(255, 255, 255, 0.5); }
+.event-card-swatch { width: 12px; height: 12px; flex-shrink: 0; border-radius: 50%; background: var(--swatch-color, var(--gold)); border: 1px solid rgba(255, 255, 255, 0.5); }
 
-.story-card {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  background: var(--color-surface);
-}
-.story-card img { width: 100%; height: 100%; object-fit: cover; }
-.story-caption {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 1.6rem 1rem 1rem;
-  background: linear-gradient(180deg, transparent, rgba(11, 43, 34, 0.75));
-  color: #F3EFE4;
-  font-family: var(--font-sc);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.carousel3d-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.2rem; }
+.carousel3d-dots { display: flex; justify-content: center; gap: 0.2rem; margin-top: 1.2rem; }
 .carousel3d-dot {
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  background: none;
+  border: none; padding: 0; cursor: pointer;
+}
+.carousel3d-dot::after {
+  content: "";
   width: 7px; height: 7px; border-radius: 50%;
   background: var(--color-border);
   transition: background var(--dur-fast) var(--ease-luxe), transform var(--dur-fast) var(--ease-luxe);
-  border: none; padding: 0; cursor: pointer;
 }
-.carousel3d-dot.is-active { background: var(--color-accent-strong); transform: scale(1.3); }
+.carousel3d-dot.is-active::after { background: var(--color-accent-strong); transform: scale(1.3); }
 
 /* ==========================================================================
-   7. Grand Reception — Walima spotlight
+   7. Nikah spotlight (class names kept as "reception-*" from the original design)
    ========================================================================== */
 
 .reception { padding-top: 0; padding-bottom: 0; }
@@ -1045,8 +1053,10 @@ a { color: inherit; }
    ========================================================================== */
 
 .closing {
+  min-height: 90vh;
   min-height: 90svh;
   justify-content: center;
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--section-pad-y));
   background: linear-gradient(180deg, transparent, var(--color-bg-alt) 60%);
 }
 

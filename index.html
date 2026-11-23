@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -9,55 +10,66 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- Reusable vector symbols, defined once and referenced everywhere via <use> -->
   <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
     <defs>
       <symbol id="icon-rose" viewBox="0 0 64 64">
-        <path d="M32 54c-10-2-18-10-18-20 0-8 6-14 14-14 4 0 7 2 9 5 2-3 5-5 9-5 8 0 14 6 14 14 0 10-8 18-18 20Z" fill="currentColor" opacity="0.18"/>
-        <path d="M32 46c-7-1-12-7-12-13 0-5 4-9 9-9 3 0 5 1 6 3 1-2 3-3 6-3 5 0 9 4 9 9 0 6-5 12-12 13Z" fill="currentColor" opacity="0.3"/>
-        <path d="M32 38c-4-1-7-4-7-8 0-3 2-5 5-5 2 0 3 1 4 2 1-1 2-2 4-2 3 0 5 2 5 5 0 4-3 7-7 8Z" fill="currentColor" opacity="0.55"/>
-        <circle cx="32" cy="30" r="3" fill="currentColor"/>
+        <path d="M32 54c-10-2-18-10-18-20 0-8 6-14 14-14 4 0 7 2 9 5 2-3 5-5 9-5 8 0 14 6 14 14 0 10-8 18-18 20Z"
+          fill="currentColor" opacity="0.18" />
+        <path d="M32 46c-7-1-12-7-12-13 0-5 4-9 9-9 3 0 5 1 6 3 1-2 3-3 6-3 5 0 9 4 9 9 0 6-5 12-12 13Z"
+          fill="currentColor" opacity="0.3" />
+        <path d="M32 38c-4-1-7-4-7-8 0-3 2-5 5-5 2 0 3 1 4 2 1-1 2-2 4-2 3 0 5 2 5 5 0 4-3 7-7 8Z" fill="currentColor"
+          opacity="0.55" />
+        <circle cx="32" cy="30" r="3" fill="currentColor" />
       </symbol>
       <symbol id="icon-sparkle" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z"/>
+        <path fill="currentColor" d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" />
       </symbol>
       <symbol id="icon-tassel" viewBox="0 0 40 80">
-        <circle cx="20" cy="14" r="10" fill="currentColor"/>
-        <path d="M20 24v6" stroke="currentColor" stroke-width="2"/>
-        <path d="M8 30h24l-3 44a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2Z" fill="currentColor" opacity="0.85"/>
+        <circle cx="20" cy="14" r="10" fill="currentColor" />
+        <path d="M20 24v6" stroke="currentColor" stroke-width="2" />
+        <path d="M8 30h24l-3 44a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2Z" fill="currentColor" opacity="0.85" />
         <g stroke="currentColor" stroke-width="1" opacity="0.5">
-          <path d="M12 34v40M18 34v42M26 34v42M32 34v40"/>
+          <path d="M12 34v40M18 34v42M26 34v42M32 34v40" />
         </g>
       </symbol>
       <symbol id="icon-mosque" viewBox="0 0 64 64">
-        <path d="M32 6c5 0 9 4 9 9 0 3-1 5-3 7h-12c-2-2-3-4-3-7 0-5 4-9 9-9Z" fill="currentColor"/>
-        <rect x="14" y="24" width="36" height="30" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
-        <path d="M22 54V40a10 10 0 0 1 20 0v14" fill="none" stroke="currentColor" stroke-width="2"/>
-        <path d="M10 54h44" stroke="currentColor" stroke-width="2"/>
+        <path d="M32 6c5 0 9 4 9 9 0 3-1 5-3 7h-12c-2-2-3-4-3-7 0-5 4-9 9-9Z" fill="currentColor" />
+        <rect x="14" y="24" width="36" height="30" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M22 54V40a10 10 0 0 1 20 0v14" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M10 54h44" stroke="currentColor" stroke-width="2" />
       </symbol>
       <symbol id="icon-henna" viewBox="0 0 64 64">
-        <path d="M20 58V34c0-10 4-18 4-24a3 3 0 0 1 6 0c0 5-2 9-2 14 0-6 0-13 0-17a3 3 0 0 1 6 0c0 4 0 11 0 17 0-5 0-11 0-14a3 3 0 0 1 6 0c0 3 0 9 0 14 0-3 0-6 0-8a3 3 0 0 1 6 0c0 6 2 11 2 19v7c0 12-8 20-14 20h-6c-5 0-8-4-8-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        <path d="M26 42c3-2 6-2 9 0M26 48c3-2 6-2 9 0" stroke="currentColor" stroke-width="1.4" opacity="0.6" fill="none"/>
+        <path
+          d="M20 58V34c0-10 4-18 4-24a3 3 0 0 1 6 0c0 5-2 9-2 14 0-6 0-13 0-17a3 3 0 0 1 6 0c0 4 0 11 0 17 0-5 0-11 0-14a3 3 0 0 1 6 0c0 3 0 9 0 14 0-3 0-6 0-8a3 3 0 0 1 6 0c0 6 2 11 2 19v7c0 12-8 20-14 20h-6c-5 0-8-4-8-8Z"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+        <path d="M26 42c3-2 6-2 9 0M26 48c3-2 6-2 9 0" stroke="currentColor" stroke-width="1.4" opacity="0.6"
+          fill="none" />
       </symbol>
       <symbol id="icon-lantern" viewBox="0 0 64 64">
-        <path d="M32 4v6M24 10h16l4 8H20Z" fill="currentColor"/>
-        <path d="M20 18h24l-4 30c-1 5-5 9-8 9s-7-4-8-9Z" fill="none" stroke="currentColor" stroke-width="2"/>
-        <path d="M26 24h12M24 32h16M26 40h12" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
-        <path d="M32 57v5" stroke="currentColor" stroke-width="2"/>
-        <circle cx="32" cy="64" r="2" fill="currentColor"/>
+        <path d="M32 4v6M24 10h16l4 8H20Z" fill="currentColor" />
+        <path d="M20 18h24l-4 30c-1 5-5 9-8 9s-7-4-8-9Z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M26 24h12M24 32h16M26 40h12" stroke="currentColor" stroke-width="1.2" opacity="0.6" />
+        <path d="M32 57v5" stroke="currentColor" stroke-width="2" />
+        <circle cx="32" cy="64" r="2" fill="currentColor" />
       </symbol>
       <symbol id="icon-pin" viewBox="0 0 24 24">
-        <path d="M12 22s7-7.5 7-13a7 7 0 1 0-14 0c0 5.5 7 13 7 13Z" fill="currentColor"/>
-        <circle cx="12" cy="9" r="2.6" fill="var(--color-bg,#fff)"/>
+        <path d="M12 22s7-7.5 7-13a7 7 0 1 0-14 0c0 5.5 7 13 7 13Z" fill="currentColor" />
+        <circle cx="12" cy="9" r="2.6" fill="var(--color-bg,#fff)" />
       </symbol>
       <symbol id="icon-hand-pull" viewBox="0 0 40 40">
-        <path d="M18 6a2 2 0 0 1 4 0v12l3-2a2 2 0 0 1 3 2l-1 8c-1 5-5 9-10 9h-2c-4 0-7-3-8-7l-2-8a2 2 0 0 1 4-1l1 3V10a2 2 0 0 1 4 0v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+        <path
+          d="M18 6a2 2 0 0 1 4 0v12l3-2a2 2 0 0 1 3 2l-1 8c-1 5-5 9-10 9h-2c-4 0-7-3-8-7l-2-8a2 2 0 0 1 4-1l1 3V10a2 2 0 0 1 4 0v8"
+          fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" />
       </symbol>
     </defs>
   </svg>
@@ -67,22 +79,59 @@
 
   <!-- Fixed decorative roses + garlands, parallax/sway with scroll -->
   <div class="scene-decor" aria-hidden="true">
-    <svg class="corner-rose corner-rose--tl"><use href="#icon-rose"></use></svg>
-    <svg class="corner-rose corner-rose--br"><use href="#icon-rose"></use></svg>
-    <div class="garland garland--a"><svg viewBox="0 0 10 10"><use href="#icon-sparkle"></use></svg><svg viewBox="0 0 10 10"><use href="#icon-sparkle"></use></svg><svg viewBox="0 0 10 10"><use href="#icon-sparkle"></use></svg></div>
-    <div class="garland garland--b"><svg viewBox="0 0 10 10"><use href="#icon-sparkle"></use></svg><svg viewBox="0 0 10 10"><use href="#icon-sparkle"></use></svg><svg viewBox="0 0 10 10"><use href="#icon-sparkle"></use></svg></div>
+    <svg class="corner-rose corner-rose--tl">
+      <use href="#icon-rose"></use>
+    </svg>
+    <svg class="corner-rose corner-rose--br">
+      <use href="#icon-rose"></use>
+    </svg>
+    <div class="garland garland--a"><svg viewBox="0 0 10 10">
+        <use href="#icon-sparkle"></use>
+      </svg><svg viewBox="0 0 10 10">
+        <use href="#icon-sparkle"></use>
+      </svg><svg viewBox="0 0 10 10">
+        <use href="#icon-sparkle"></use>
+      </svg></div>
+    <div class="garland garland--b"><svg viewBox="0 0 10 10">
+        <use href="#icon-sparkle"></use>
+      </svg><svg viewBox="0 0 10 10">
+        <use href="#icon-sparkle"></use>
+      </svg><svg viewBox="0 0 10 10">
+        <use href="#icon-sparkle"></use>
+      </svg></div>
   </div>
+
+  <!-- Fixed petal-fall, drifts over the whole page, not just the opening -->
+  <div class="petal-field" id="petalField" aria-hidden="true"></div>
 
   <!-- Persistent controls -->
   <div class="chrome-controls">
     <button id="themeToggle" class="chrome-btn" type="button" aria-label="Change theme">
-      <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
-      <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
-      <svg class="icon icon-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4.5" width="18" height="12" rx="1.6"/><path d="M8.5 20.5h7M12 16.5v4"/></svg>
+      <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="4.2" />
+        <path
+          d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" />
+      </svg>
+      <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" />
+      </svg>
+      <svg class="icon icon-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <rect x="3" y="4.5" width="18" height="12" rx="1.6" />
+        <path d="M8.5 20.5h7M12 16.5v4" />
+      </svg>
     </button>
     <button id="musicToggle" class="chrome-btn" type="button" aria-label="Play background music" hidden>
-      <svg class="icon icon-music-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V6.6a1 1 0 0 1 1.2-1l8-1.6a1 1 0 0 1 1.2 1V16"/><circle cx="7" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
-      <svg class="icon icon-music-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V6.6a1 1 0 0 1 1.2-1l8-1.6a1 1 0 0 1 1.2 1V16"/><circle cx="7" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/><path d="M3 3l18 18" stroke-width="1.8"/></svg>
+      <svg class="icon icon-music-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M9 18V6.6a1 1 0 0 1 1.2-1l8-1.6a1 1 0 0 1 1.2 1V16" />
+        <circle cx="7" cy="18" r="2.5" />
+        <circle cx="17.5" cy="16" r="2.5" />
+      </svg>
+      <svg class="icon icon-music-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M9 18V6.6a1 1 0 0 1 1.2-1l8-1.6a1 1 0 0 1 1.2 1V16" />
+        <circle cx="7" cy="18" r="2.5" />
+        <circle cx="17.5" cy="16" r="2.5" />
+        <path d="M3 3l18 18" stroke-width="1.8" />
+      </svg>
     </button>
   </div>
   <audio id="bgMusic" loop preload="none"></audio>
@@ -99,18 +148,18 @@
 
     <!-- 1. OPENING — 3D Book -->
     <section id="book-stage" class="section book-stage">
-      <div class="petal-field" id="petalField" aria-hidden="true"></div>
-
       <div class="book-perspective">
         <div class="book" id="book" role="button" tabindex="0" aria-label="Tap the book to open your invitation">
           <div class="book-spine" aria-hidden="true"></div>
           <div class="book-pages" aria-hidden="true"></div>
+          <p class="book-chapter" id="bookChapterText" aria-live="polite"></p>
           <div class="book-cover" id="bookCover">
             <div class="book-cover-border">
               <div class="emblem emblem--cover">
                 <span class="emblem-bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
               </div>
-              <p class="book-cover-names"><span id="bookBride">Afreen</span> <span class="amp">&amp;</span> <span id="bookGroom">Aftab</span></p>
+              <p class="book-cover-names"><span id="bookBride">Afreen</span> <span class="amp">&amp;</span> <span
+                  id="bookGroom">Aftab</span></p>
             </div>
           </div>
         </div>
@@ -124,9 +173,9 @@
 
       <!-- 2. FIRST PAGE -->
       <section id="first-page" class="section first-page">
-        <div class="emblem emblem--small">
+        <!-- <div class="emblem emblem--small">
           <span class="emblem-bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
-        </div>
+        </div> -->
         <p class="eyebrow">Together with their families</p>
 
         <p class="typed-name" id="typedGroom" aria-label="Aftab"></p>
@@ -137,17 +186,25 @@
         <p class="typed-name" id="typedBride" aria-label="Afreen"></p>
         <p class="parents-line" id="brideParentsLine">Daughter of Mr. &amp; Mrs. Rahman</p>
 
-        <p class="invite-line">request the honour of your presence as they begin their journey together, In Sha Allah</p>
+        <p class="invite-line">request the honour of your presence as they begin their journey together, In Sha Allah
+        </p>
 
-        <div class="scroll-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+        <div class="scroll-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.6">
+            <path d="M12 4v15M6 13l6 6 6-6" />
+          </svg></div>
       </section>
 
       <!-- 3. ISLAMIC MESSAGE -->
       <section id="message" class="section message">
         <div class="verse-card" data-reveal>
-          <svg class="verse-ornament" viewBox="0 0 24 24"><use href="#icon-sparkle"></use></svg>
-          <p class="verse-arabic" lang="ar">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
-          <p class="verse-translation">&ldquo;And among His signs is that He created for you spouses from among yourselves, that you may find tranquility in them, and He placed between you affection and mercy.&rdquo;</p>
+          <svg class="verse-ornament" viewBox="0 0 24 24">
+            <use href="#icon-sparkle"></use>
+          </svg>
+          <p class="verse-arabic" lang="ar">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا
+            إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+          <p class="verse-translation">&ldquo;And among His signs is that He created for you spouses from among
+            yourselves, that you may find tranquility in them, and He placed between you affection and mercy.&rdquo;</p>
           <p class="verse-reference">— Surah Ar-Rum 30:21</p>
         </div>
       </section>
@@ -160,28 +217,40 @@
           <div class="scroll-rod"></div>
           <div class="scroll-paper" id="scrollPaper">
             <div class="scroll-paper-inner">
-              <div class="emblem emblem--small">
-                <span class="emblem-bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
-              </div>
-              <svg class="scroll-rose scroll-rose--l"><use href="#icon-rose"></use></svg>
-              <svg class="scroll-rose scroll-rose--r"><use href="#icon-rose"></use></svg>
+              <!-- <div class="emblem emblem--small"> -->
+                <span class="emblem-bismillah" lang="ar">وَخَلَقْنَاكُمْ أَزْوَاجًا</span>
+              <!-- </div> -->
+              <svg class="scroll-rose scroll-rose--l">
+                <use href="#icon-rose"></use>
+              </svg>
+              <svg class="scroll-rose scroll-rose--r">
+                <use href="#icon-rose"></use>
+              </svg>
               <p class="scroll-date" id="scrollDateText">Friday, 1 January 2027</p>
               <p class="scroll-sub">Nikah Ceremony</p>
             </div>
           </div>
           <button class="scroll-tassel" id="scrollTassel" type="button" aria-label="Pull the tassel to reveal the date">
-            <svg class="tassel-icon"><use href="#icon-tassel"></use></svg>
-            <span class="pull-hint"><svg><use href="#icon-hand-pull"></use></svg>Pull</span>
+            <svg class="tassel-icon">
+              <use href="#icon-tassel"></use>
+            </svg>
+            <span class="pull-hint"><svg>
+                <use href="#icon-hand-pull"></use>
+              </svg>Pull</span>
           </button>
         </div>
 
         <div class="countdown-line" id="countdownLine">
-          <span id="cdDays">00</span>d&nbsp;·&nbsp;<span id="cdHours">00</span>h&nbsp;·&nbsp;<span id="cdMinutes">00</span>m&nbsp;·&nbsp;<span id="cdSeconds">00</span>s
+          <span id="cdDays">00</span>d&nbsp;·&nbsp;<span id="cdHours">00</span>h&nbsp;·&nbsp;<span
+            id="cdMinutes">00</span>m&nbsp;·&nbsp;<span id="cdSeconds">00</span>s
         </div>
         <p class="countdown-message" id="countdownMessage" hidden>Today, In Sha Allah, our hearts become one.</p>
 
         <button class="btn btn-primary" id="addToCalendarDate" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M8 3.5v4M16 3.5v4M3.5 10h17"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3.5" y="5.5" width="17" height="15" rx="2" />
+            <path d="M8 3.5v4M16 3.5v4M3.5 10h17" />
+          </svg>
           <span>Add to Calendar</span>
         </button>
       </section>
@@ -196,30 +265,31 @@
         <div class="carousel3d-dots" id="festivitiesDots"></div>
       </section>
 
-      <!-- 6. OUR STORY — 3D photo carousel -->
-      <section id="our-story" class="section our-story">
-        <p class="eyebrow" data-reveal>Moments we cherish</p>
-        <h2 class="section-title" data-reveal>Our Story</h2>
-        <div class="carousel3d carousel3d--photo" id="storyCarousel">
-          <div class="carousel3d-track" id="storyTrack"></div>
-        </div>
-        <div class="carousel3d-dots" id="storyDots"></div>
-      </section>
-
-      <!-- 7. GRAND RECEPTION — Walima spotlight -->
+      <!-- 7. THE NIKAH — ceremony spotlight (uses the "reception" showcase styling) -->
       <section id="reception" class="section reception">
         <div class="reception-card" data-reveal>
-          <svg class="reception-sparkle reception-sparkle--tl"><use href="#icon-sparkle"></use></svg>
-          <svg class="reception-sparkle reception-sparkle--br"><use href="#icon-sparkle"></use></svg>
-          <svg class="reception-bloom reception-bloom--tl" data-bloom><use href="#icon-rose"></use></svg>
-          <svg class="reception-bloom reception-bloom--br" data-bloom><use href="#icon-rose"></use></svg>
+          <svg class="reception-sparkle reception-sparkle--tl">
+            <use href="#icon-sparkle"></use>
+          </svg>
+          <svg class="reception-sparkle reception-sparkle--br">
+            <use href="#icon-sparkle"></use>
+          </svg>
+          <svg class="reception-bloom reception-bloom--tl" data-bloom>
+            <use href="#icon-rose"></use>
+          </svg>
+          <svg class="reception-bloom reception-bloom--br" data-bloom>
+            <use href="#icon-rose"></use>
+          </svg>
 
-          <p class="eyebrow eyebrow--onwine">The Grand Reception</p>
-          <h2 class="reception-title" id="receptionTitle">Walima</h2>
-          <p class="reception-date" id="receptionDate">Saturday, 2 January 2027 · 8:00 PM</p>
-          <p class="reception-venue" id="receptionVenue">Banquet Hall</p>
+          <p class="eyebrow eyebrow--onwine">A Sacred Union</p>
+          <h2 class="reception-title" id="receptionTitle">Nikah</h2>
+          <p class="reception-date" id="receptionDate">Friday, 1 January 2027 · 7:00 PM</p>
+          <p class="reception-venue" id="receptionVenue">Wedding Venue</p>
           <button class="btn btn-ghost btn-onwine" id="receptionAddToCalendar" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M8 3.5v4M16 3.5v4M3.5 10h17"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3.5" y="5.5" width="17" height="15" rx="2" />
+              <path d="M8 3.5v4M16 3.5v4M3.5 10h17" />
+            </svg>
             <span>Add to Calendar</span>
           </button>
         </div>
@@ -230,12 +300,17 @@
         <p class="eyebrow" data-reveal>Find your way</p>
         <h2 class="section-title" data-reveal>Location</h2>
 
-        <div class="map-card" id="mapCard" data-reveal role="link" tabindex="0" aria-label="Open the venue in Google Maps">
+        <div class="map-card" id="mapCard" data-reveal role="link" tabindex="0"
+          aria-label="Open the venue in Google Maps">
           <svg class="map-illustration" viewBox="0 0 320 200">
-            <rect x="4" y="4" width="312" height="192" rx="14" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.3"/>
-            <path id="mapRoute" d="M30 160 C 90 150, 110 90, 170 80 S 260 50, 290 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round"/>
-            <circle cx="30" cy="160" r="5" fill="currentColor"/>
-            <svg x="272" y="18" width="36" height="36" viewBox="0 0 24 24" class="map-pin"><use href="#icon-pin"></use></svg>
+            <rect x="4" y="4" width="312" height="192" rx="14" fill="none" stroke="currentColor" stroke-width="1.2"
+              opacity="0.3" />
+            <path id="mapRoute" d="M30 160 C 90 150, 110 90, 170 80 S 260 50, 290 40" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round" />
+            <circle cx="30" cy="160" r="5" fill="currentColor" />
+            <svg x="272" y="18" width="36" height="36" viewBox="0 0 24 24" class="map-pin">
+              <use href="#icon-pin"></use>
+            </svg>
           </svg>
           <p class="map-venue" id="mapVenue">Wedding Venue</p>
           <p class="map-address" id="mapAddress">Full Address, City, State</p>
@@ -243,11 +318,16 @@
 
         <div class="location-actions" data-reveal>
           <a class="btn btn-primary" id="getDirections" href="#" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l18-7-7 18-3-7-8-4Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M3 11l18-7-7 18-3-7-8-4Z" />
+            </svg>
             <span>Get Directions</span>
           </a>
           <button class="btn btn-ghost" id="copyAddress" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M4 16V5a1 1 0 0 1 1-1h11"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="8" y="8" width="12" height="12" rx="1.5" />
+              <path d="M4 16V5a1 1 0 0 1 1-1h11" />
+            </svg>
             <span>Copy Address</span>
           </button>
         </div>
@@ -256,14 +336,21 @@
 
       <!-- 9. CLOSING -->
       <section id="closing" class="section closing">
-        <div class="emblem emblem--small" data-reveal>
+        <!-- <div class="emblem emblem--small" data-reveal>
           <span class="emblem-bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
-        </div>
+        </div> -->
         <p class="closing-welcome" data-reveal>We can&rsquo;t wait to celebrate with you</p>
-        <p class="closing-dua" data-reveal lang="ar">بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
-        <p class="closing-translation" data-reveal>&ldquo;May Allah bless you and shower His blessings upon you, and may He unite you both in goodness.&rdquo;</p>
-        <p class="closing-names" data-reveal><span id="closingBride">Afreen</span> <span class="amp">&amp;</span> <span id="closingGroom">Aftab</span></p>
-        <p class="closing-families" id="closingFamilies" data-reveal>The Rahman &amp; Khan Families</p>
+        <p class="closing-dua" data-reveal lang="ar">بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي
+          خَيْرٍ</p>
+        <p class="closing-translation" data-reveal style="
+    margin: 0rem 0rem 1rem;
+">&ldquo;May Allah bless you and shower His blessings upon you, and may He unite you both in goodness.&rdquo;</p>
+        <p class="verse-reference" style="
+    margin: 0rem 0rem 2rem;
+">— Surah Ar-Rum 30:21</p>
+        <p class="closing-names" data-reveal><span id="closingBride">Afreen</span> <span class="amp">&amp;</span> <span
+            id="closingGroom">Aftab</span></p>
+        <p class="closing-families" id="closingFamilies" data-reveal>The Shaikh &amp; Shaikh Families</p>
       </section>
 
     </div>
@@ -271,4 +358,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
