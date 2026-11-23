@@ -1,0 +1,495 @@
+# Interactive Wedding Invitation Experience – Envelope and Event Cards
+
+I want the wedding invitation website to have a unique interactive experience that resembles opening a physical wedding invitation envelope containing multiple invitation cards.
+
+This is one of the most important parts of the website. Please pay special attention to the animation, realism, interaction flow, and visual quality.
+
+## 1. Initial Screen – Closed Wedding Envelope
+
+When a guest first visits the website, they should not immediately see a traditional website layout.
+
+Instead, the entire first screen should display a beautifully designed wedding invitation envelope.
+
+### Envelope Design
+
+The envelope should look luxurious and elegant, inspired by premium physical wedding invitations.
+
+Design elements:
+
+- Premium textured paper appearance.
+- Deep emerald green, ivory, champagne gold, or colors inspired by the reference video.
+- Elegant Islamic geometric patterns.
+- Gold decorative borders.
+- Subtle floral ornaments if appropriate.
+- Beautiful envelope flap.
+- Elegant wax seal or decorative emblem.
+- Soft shadows to create depth.
+- Realistic paper texture.
+- Sophisticated lighting.
+
+The envelope should be centered on the screen and should look like a physical object.
+
+### Text on the Envelope
+
+The envelope should contain the following:
+
+**Arabic Bismillah:**
+
+بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+
+**English text:**
+
+With the blessings of Allah
+
+**Bride and Groom Names:**
+
+[BRIDE NAME]
+
+&
+
+[GROOM NAME]
+
+The names should be elegantly displayed using premium typography.
+
+The text should be positioned carefully so that it looks like it is printed on the envelope itself.
+
+### Interaction
+
+The envelope should invite the guest to open it.
+
+Add a subtle interaction hint such as:
+
+"Tap to open your invitation"
+
+or
+
+"Open Invitation"
+
+The envelope should have a subtle animation, such as gentle floating, a soft glow, or a slight movement, to indicate that it is interactive.
+
+When the user clicks or taps anywhere on the envelope, trigger the envelope-opening animation.
+
+---
+
+# 2. Envelope Opening Animation
+
+When the user clicks the envelope:
+
+The envelope flap should open realistically.
+
+The animation should feel like a physical envelope being opened.
+
+Suggested animation sequence:
+
+1. The envelope slightly lifts or moves forward.
+2. The wax seal or decorative element disappears or breaks away elegantly if applicable.
+3. The envelope flap rotates open.
+4. The inside of the envelope becomes visible.
+5. Invitation cards inside the envelope become visible.
+6. The cards appear stacked inside the envelope.
+
+Use CSS 3D transforms, perspective, rotations, shadows, and layered elements to create a realistic effect.
+
+The animation should be smooth and cinematic.
+
+Avoid simple fade-in effects for the entire envelope.
+
+The envelope should feel like a real physical object opening.
+
+Once the animation completes, the guest should be able to see the invitation cards inside the envelope.
+
+---
+
+# 3. Event Cards Inside the Envelope
+
+The envelope should contain multiple invitation cards, stacked on top of one another.
+
+Each card represents a separate wedding event.
+
+For example:
+
+- Mehndi
+- Nikah
+- Walima
+
+The guest should be able to identify each event card before opening it.
+
+### Card Design
+
+Each card should have its own unique design while maintaining a consistent wedding invitation theme.
+
+Cards may differ in:
+
+- Decorative patterns
+- Accent colors
+- Floral elements
+- Icons
+- Typography
+- Borders
+- Event-specific ornaments
+
+For example:
+
+**MEHNDI**
+
+A floral and festive design with green and gold elements.
+
+**NIKAH**
+
+A more elegant, spiritual, minimal design with ivory and gold.
+
+**WALIMA**
+
+A sophisticated celebration design with emerald, champagne, and elegant floral elements.
+
+The cards should be visibly stacked, with each card slightly offset from the others so guests can see that multiple invitations are present.
+
+The event name should be clearly visible on each card.
+
+The guest should not need to guess which card represents which event.
+
+---
+
+# 4. Selecting an Event Card
+
+When the guest clicks on a specific event card, that card should automatically animate out of the envelope.
+
+The animation should resemble physically removing a card from a stack.
+
+### Desired Animation
+
+When a card is selected:
+
+1. The selected card moves slightly upward.
+2. The card moves forward toward the viewer.
+3. The card rotates subtly to create a realistic 3D effect.
+4. The card slides out of the envelope.
+5. The card becomes the primary focus of the screen.
+6. The other cards remain inside the envelope, or move slightly backward to provide depth.
+7. The selected card smoothly transitions into the event details view.
+
+Use:
+
+- CSS perspective
+- `transform`
+- `translate3d`
+- Rotation
+- Layered shadows
+- Smooth easing
+- Scale transitions
+- Z-index manipulation
+
+The animation should feel like a physical invitation card being pulled out of an envelope.
+
+Do not simply replace the card with a different HTML section instantly.
+
+---
+
+# 5. Event Details Card
+
+After the selected invitation card comes out of the envelope, display the complete details of that event.
+
+The event details should be displayed on the card itself or through an elegant card expansion animation.
+
+For example, the Nikah card could expand into a larger invitation card displaying:
+
+### NIKAH
+
+With the blessings of Allah SWT and our beloved families, we invite you to join us for the Nikah ceremony of:
+
+[BRIDE NAME]
+
+&
+
+[GROOM NAME]
+
+**Date:** [DATE]
+
+**Time:** [TIME]
+
+**Venue:** [VENUE NAME]
+
+**Address:** [FULL ADDRESS]
+
+The design should feel like reading a beautifully printed wedding invitation card.
+
+The card should have:
+
+- Elegant typography
+- Event-specific decorations
+- Beautiful spacing
+- Islamic geometric patterns
+- Decorative borders
+- Gold accents
+- Appropriate event imagery or illustrations if needed
+
+Do not make the details look like a generic website form or information panel.
+
+---
+
+# 6. Add to Calendar Button
+
+At the bottom of each event invitation card, include a clearly visible:
+
+**Add to Calendar**
+
+button.
+
+When clicked, allow the guest to add the event to their calendar.
+
+Implement functionality to generate an `.ics` calendar file compatible with:
+
+- Google Calendar
+- Apple Calendar
+- Outlook
+- Other calendar applications
+
+The calendar event should include:
+
+- Event title
+- Event date
+- Start time
+- End time
+- Venue
+- Address
+- Description
+
+If possible, also provide a Google Calendar link.
+
+The calendar functionality should use the specific details of the selected event.
+
+Each event should have its own calendar entry.
+
+---
+
+# 7. Returning to the Envelope
+
+After the guest finishes viewing an event, provide a beautifully designed navigation control:
+
+"Back to Invitation"
+
+or
+
+"View Other Events"
+
+When the guest clicks this button:
+
+1. The event card should smoothly animate back into the envelope.
+2. The envelope should return to its opened state.
+3. The remaining invitation cards should be visible.
+4. The guest should be able to select another event.
+
+The interaction should feel like returning a physical invitation card into the envelope.
+
+The guest should be able to view all events individually.
+
+---
+
+# 8. Sequential Event Experience
+
+The overall experience should work like this:
+
+### Step 1
+
+Guest opens website.
+
+They see a closed envelope containing:
+
+- Bismillah
+- With the blessings of Allah
+- Bride and groom names
+
+### Step 2
+
+Guest clicks the envelope.
+
+The envelope opens with a beautiful animation.
+
+### Step 3
+
+Guest sees the stacked invitation cards.
+
+For example:
+
+- Mehndi
+- Nikah
+- Walima
+
+### Step 4
+
+Guest clicks the Mehndi card.
+
+The Mehndi card slides out of the envelope and reveals its details.
+
+### Step 5
+
+Guest reads the details and clicks Add to Calendar.
+
+### Step 6
+
+Guest clicks Back to Invitation.
+
+The card returns to the envelope.
+
+### Step 7
+
+Guest clicks the Nikah card.
+
+The Nikah card slides out and reveals its details.
+
+### Step 8
+
+Guest adds the Nikah event to their calendar.
+
+### Step 9
+
+Guest returns to the envelope and selects the Walima card.
+
+The same interaction repeats.
+
+### Step 10
+
+After all events have been viewed, the guest can continue to other invitation features, such as:
+
+- RSVP
+- Wedding gallery
+- Venue location
+- Countdown
+- Personal message or dua
+
+---
+
+# 9. Animation Quality
+
+The animation is extremely important.
+
+I want the experience to feel like interacting with a real physical wedding invitation.
+
+Use:
+
+- Realistic envelope flap rotation
+- 3D perspective
+- Layered paper cards
+- Natural card movement
+- Smooth transitions
+- Soft shadows
+- Subtle paper movement
+- Elegant easing curves
+- Appropriate animation timing
+
+Avoid:
+
+- Abrupt transitions
+- Simple fade-only animations
+- Cartoon-style animations
+- Excessive bounce
+- Overly fast movement
+- Cheap-looking transitions
+
+The animation should be elegant, smooth, realistic, and premium.
+
+---
+
+# 10. Mobile Experience
+
+This interaction must work exceptionally well on mobile devices.
+
+Most guests will open the invitation on their mobile phones.
+
+On mobile:
+
+- The envelope should fit comfortably within the screen.
+- The cards should be easy to tap.
+- The event details should be readable.
+- Animations should remain smooth.
+- No horizontal scrolling should occur.
+- Buttons should have sufficient touch area.
+- The envelope and cards should scale proportionally.
+
+The interaction should support both mouse clicks and touch gestures.
+
+---
+
+# 11. Implementation Requirements
+
+Implement this experience using:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+Use CSS 3D transforms and transitions where appropriate.
+
+Keep the animation logic organized and reusable.
+
+The event information should come from a JavaScript configuration object rather than being hardcoded separately into each card.
+
+Example:
+
+```javascript
+const weddingEvents = [
+    {
+        id: "mehndi",
+        title: "Mehndi",
+        date: "2027-01-10",
+        startTime: "18:00",
+        endTime: "22:00",
+        venue: "Venue Name",
+        address: "Venue Address",
+        description: "Join us for an evening of celebration.",
+        theme: "mehndi"
+    },
+    {
+        id: "nikah",
+        title: "Nikah",
+        date: "2027-01-11",
+        startTime: "11:00",
+        endTime: "13:00",
+        venue: "Venue Name",
+        address: "Venue Address",
+        description: "Join us for our Nikah ceremony.",
+        theme: "nikah"
+    },
+    {
+        id: "walima",
+        title: "Walima",
+        date: "2027-01-12",
+        startTime: "19:00",
+        endTime: "23:00",
+        venue: "Venue Name",
+        address: "Venue Address",
+        description: "Join us for our Walima celebration.",
+        theme: "walima"
+    }
+];
+```
+
+Use the configuration to dynamically render the event cards and their details.
+
+Make the event cards reusable.
+
+---
+
+# 12. Final Expectations
+
+This interaction should be the centerpiece of the wedding invitation website.
+
+I do not want the envelope to merely be a decorative illustration.
+
+I want the envelope and invitation cards to be interactive objects with realistic animations.
+
+The guest should feel that they are:
+
+1. Receiving a physical invitation.
+2. Opening the envelope.
+3. Discovering the invitation cards.
+4. Selecting a specific event.
+5. Physically pulling the card out.
+6. Reading the invitation.
+7. Adding the event to their calendar.
+8. Returning the card.
+9. Exploring the remaining invitations.
+
+Please prioritize the quality of this experience above adding unnecessary website features.
+
+The finished implementation should look and feel like a premium, custom-designed digital Muslim wedding invitation.
