@@ -8,7 +8,7 @@ const weddingConfig = {
   brideName: "Afreen Shaikh",
   groomName: "Aftab Turk",
   brideParents: "Mr. & Mrs. Shaikh",
-  groomParents: "Mr. & Mrs. Shaikh",
+  groomParents: "Mr. & Mrs. Turk",
 
   // The Nikah is the main ceremony: it drives the countdown, the Save-the-Date
   // scroll, the closing date, and its own dedicated spotlight section — it is
@@ -38,7 +38,7 @@ const weddingConfig = {
       mapsUrl: "https://maps.google.com/?q=Haa+Meem",
       description: "An evening of henna, music, and joyful beginnings with family and friends.",
       theme: "mehndi",
-      dressCode: { label: "Vibrant Festive Colours", color: "#496934" }
+      dressCode: { label: "Mehndi Greens & Festive Hues", color: "#496934" }
     },
     {
       id: "haldi",
