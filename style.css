@@ -63,20 +63,6 @@
   --color-shadow: rgba(0, 0, 0, 0.45);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --color-bg: #0A1D17;
-    --color-bg-alt: #0F2920;
-    --color-surface: #11271F;
-    --color-text: #F2EEE1;
-    --color-text-muted: #B9C6BC;
-    --color-border: rgba(242, 238, 225, 0.14);
-    --color-accent: #D9BD84;
-    --color-accent-strong: #E9D3A0;
-    --color-shadow: rgba(0, 0, 0, 0.45);
-  }
-}
-
 /* ==========================================================================
    Reset + base
    Per the brief, decorative motion stays on even when the OS requests
@@ -213,14 +199,11 @@ a { color: inherit; }
 .chrome-btn:active { transform: translateY(0); }
 
 .chrome-btn .icon { display: none; }
-.chrome-btn[data-mode="light"] .icon-sun,
-.chrome-btn[data-mode="dark"] .icon-moon,
-.chrome-btn[data-mode="system"] .icon-system { display: block; }
 
-#musicToggle .icon-music-off { display: none; }
-#musicToggle.is-playing .icon-music-on { display: none; }
-#musicToggle.is-playing .icon-music-off { display: block; }
-#musicToggle:not(.is-playing) .icon-music-on { display: block; }
+#musicToggle .icon-music-on { display: none; }
+#musicToggle.is-playing .icon-music-off { display: none; }
+#musicToggle.is-playing .icon-music-on { display: block; }
+#musicToggle:not(.is-playing) .icon-music-off { display: block; }
 
 /* ==========================================================================
    Loader

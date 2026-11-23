@@ -7,8 +7,8 @@
 const weddingConfig = {
   brideName: "Afreen",
   groomName: "Aftab",
-  brideParents: "Mr. & Mrs. Rahman",
-  groomParents: "Mr. & Mrs. Khan",
+  brideParents: "Mr. & Mrs. Shaikh",
+  groomParents: "Mr. & Mrs. Shaikh",
 
   // The Nikah is the main ceremony: it drives the countdown, the Save-the-Date
   // scroll, the closing date, and its own dedicated spotlight section — it is
@@ -16,12 +16,12 @@ const weddingConfig = {
   nikah: {
     id: "nikah",
     title: "Nikah",
-    date: "2027-01-01",
+    date: "2026-12-18",
     startTime: "19:00",
     endTime: "21:00",
     venue: "Wedding Venue",
-    address: "Full Address, City, State",
-    mapsUrl: "https://maps.google.com/?q=Wedding+Venue",
+    address: "Landmark 24, Wagholi, Pune, SH Nagar, Road, Wagholi, Pune, Maharashtra 412207",
+    mapsUrl: "https://maps.app.goo.gl/E2gMSjTNXPto4pGb6",
     description: "With the blessings of Allah SWT and our beloved families, we invite you to witness our Nikah."
   },
 
@@ -30,12 +30,12 @@ const weddingConfig = {
     {
       id: "mehndi",
       title: "Mehndi",
-      date: "2026-12-30",
-      startTime: "16:00",
-      endTime: "20:00",
+      date: "2026-12-16",
+      startTime: "19:00",
+      endTime: "23:00",
       venue: "Family Residence",
-      address: "Full Address, City, State",
-      mapsUrl: "https://maps.google.com/?q=Family+Residence",
+      address: "Haa Meem Residency",
+      mapsUrl: "https://maps.google.com/?q=Haa+Meem",
       description: "An evening of henna, music, and joyful beginnings with family and friends.",
       theme: "mehndi",
       dressCode: { label: "Vibrant Festive Colours", color: "#496934" }
@@ -43,19 +43,19 @@ const weddingConfig = {
     {
       id: "haldi",
       title: "Haldi",
-      date: "2026-12-31",
-      startTime: "11:00",
-      endTime: "14:00",
+      date: "2026-12-17",
+      startTime: "19:00",
+      endTime: "23:00",
       venue: "Haldi Venue",
-      address: "Full Address, City, State",
-      mapsUrl: "https://maps.google.com/?q=Wedding+Venue",
+      address: "Haa Meem Residency",
+      mapsUrl: "https://maps.google.com/?q=Haa+Meem",
       description: "A joyful turmeric ceremony blessing the couple with warmth and good fortune ahead of their big day.",
       theme: "haldi",
       dressCode: { label: "Sunshine Yellow & Marigold", color: "#D9A441" }
     }
   ],
 
-  backgroundMusic: "" // e.g. "assets/nasheed.mp3" — music control stays hidden while empty
+  backgroundMusic: "audio.mp3" // e.g. "assets/nasheed.mp3" — music control stays hidden while empty
 };
 
 const nikahEvent = weddingConfig.nikah;
@@ -63,35 +63,6 @@ const nikahEvent = weddingConfig.nikah;
 function lastWord(str) {
   const parts = str.trim().split(/\s+/);
   return parts[parts.length - 1];
-}
-
-/* ==========================================================================
-   Theme (light / dark / system)
-   ========================================================================== */
-
-const THEME_KEY = "afreenwedding-theme";
-const THEME_CYCLE = ["light", "dark", "system"];
-
-function applyTheme(mode) {
-  const root = document.documentElement;
-  if (mode === "system") {
-    root.removeAttribute("data-theme");
-  } else {
-    root.setAttribute("data-theme", mode);
-  }
-  document.getElementById("themeToggle").setAttribute("data-mode", mode);
-}
-
-function initTheme() {
-  const stored = localStorage.getItem(THEME_KEY) || "dark";
-  applyTheme(stored);
-
-  document.getElementById("themeToggle").addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme") || "system";
-    const next = THEME_CYCLE[(THEME_CYCLE.indexOf(current) + 1) % THEME_CYCLE.length];
-    applyTheme(next);
-    localStorage.setItem(THEME_KEY, next);
-  });
 }
 
 /* ==========================================================================
@@ -721,7 +692,6 @@ function initScrollReveal() {
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  initTheme();
   initMusic();
   initLoader();
   initBook();
