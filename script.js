@@ -5,8 +5,8 @@
    ========================================================================== */
 
 const weddingConfig = {
-  brideName: "Afreen",
-  groomName: "Aftab",
+  brideName: "Afreen Shaikh",
+  groomName: "Aftab Turk",
   brideParents: "Mr. & Mrs. Shaikh",
   groomParents: "Mr. & Mrs. Shaikh",
 
@@ -20,7 +20,7 @@ const weddingConfig = {
     startTime: "19:00",
     endTime: "21:00",
     venue: "Seasons 24",
-    address: "Landmark 24, Wagholi, Pune, SH Nagar, Road, Wagholi, Pune, Maharashtra 412207",
+    address: "Banquet hall TVCC city centre 9th floor above Croma show room Dhanori Pune-411015, Maharashtra",
     mapsUrl: "https://maps.app.goo.gl/E2gMSjTNXPto4pGb6",
     description: "With the blessings of Allah SWT and our beloved families, we invite you to witness our Nikah."
   },
